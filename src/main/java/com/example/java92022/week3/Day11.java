@@ -6,7 +6,9 @@ import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Day11 {
     /**
@@ -59,6 +61,7 @@ class EagerLoadingSingleton {
 
 class LazyLoadingSingleton implements Cloneable, Serializable {
     private static volatile LazyLoadingSingleton obj;
+    private Map<Integer, Integer> map = new HashMap<>();
     private LazyLoadingSingleton() { }
 
     public static LazyLoadingSingleton getInstance() {
